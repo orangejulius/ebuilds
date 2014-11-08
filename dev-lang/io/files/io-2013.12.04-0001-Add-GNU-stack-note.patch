@@ -1,0 +1,25 @@
+From dc6088459ca01408530609826ced1d2f437fff95 Mon Sep 17 00:00:00 2001
+From: Julian Simioni <julian.simioni@gmail.com>
+Date: Fri, 7 Nov 2014 13:20:47 +0100
+Subject: [PATCH 1/3] Add GNU stack note
+
+From http://wiki.gentoo.org/wiki/Hardened/GNU_stack_quickstart
+---
+ libs/coroutine/source/asm.S | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/libs/coroutine/source/asm.S b/libs/coroutine/source/asm.S
+index f6afa46..4ee7d3e 100644
+--- a/libs/coroutine/source/asm.S
++++ b/libs/coroutine/source/asm.S
+@@ -258,3 +258,7 @@ SET:
+ 	ldr	r0, [r0]
+ 	mov	pc, lr
+ #endif
++
++#if defined(__linux__) && defined(__ELF__)
++.section .note.GNU-stack,"",%progbits
++#endif
+-- 
+2.0.4
+

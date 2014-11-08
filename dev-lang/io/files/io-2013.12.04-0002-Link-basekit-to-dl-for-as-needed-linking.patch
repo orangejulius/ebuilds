@@ -1,0 +1,25 @@
+From 01b3ec8ceb3719839a4b8f3facdd4a35ed1ef6a2 Mon Sep 17 00:00:00 2001
+From: Julian Simioni <julian.simioni@gmail.com>
+Date: Fri, 7 Nov 2014 13:38:49 +0100
+Subject: [PATCH 2/3] Link basekit to dl for as-needed linking
+
+---
+ libs/basekit/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libs/basekit/CMakeLists.txt b/libs/basekit/CMakeLists.txt
+index 65d3827..21c8e10 100644
+--- a/libs/basekit/CMakeLists.txt
++++ b/libs/basekit/CMakeLists.txt
+@@ -24,7 +24,7 @@ file(GLOB SRCS "source/*.c")
+ 
+ # Now build the shared library
+ add_library(basekit SHARED ${SRCS})
+-target_link_libraries(basekit ${BASEKIT_LIBS})
++target_link_libraries(basekit dl ${BASEKIT_LIBS})
+ 
+ # ...And the static library
+ #add_library(basekit_static STATIC ${SRCS})
+-- 
+2.0.4
+
