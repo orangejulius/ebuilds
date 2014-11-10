@@ -13,7 +13,7 @@ SRC_URI="https://github.com/stevedekorte/io/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="cgi clutter dbi doc editline flux google gui http image jabber libffi libxml2
+IUSE="cgi clutter dbi doc editline google gui http image jabber json libffi libxml2
 	lzo md5sum ncurses ogg opengl postgres pcre python readline sha1 sndfile sockets
 	sqlite3 syslog theora threads truetype twitter vorbis zlib"
 DEPEND="clutter? ( media-libs/clutter )
