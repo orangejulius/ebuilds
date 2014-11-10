@@ -49,7 +49,7 @@ src_prepare() {
 	# Fix multilib strict check (bug #430496)
 	sed  -i 's/DESTINATION lib/DESTINATION lib${LIB_SUFFIX}/' \
 			addons/*/CMakeLists.txt \
-			libs/*/CMakeLists.txt
+			libs/*/CMakeLists.txt || die
 }
 
 src_configure() {
