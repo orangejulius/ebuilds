@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/io/io-2011.09.12-r2.ebuild,v 1.4 2014/11/03 11:38:33 titanofold Exp $
 
-EAPI=4
+EAPI=5
 
 inherit cmake-utils
 
