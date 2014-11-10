@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit cmake-utils
+inherit cmake-utils eutils
 
 DESCRIPTION="Io is a small, prototype-based programming language"
 HOMEPAGE="http://www.iolanguage.com"
