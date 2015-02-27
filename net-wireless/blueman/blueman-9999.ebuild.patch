@@ -1,0 +1,20 @@
+--- /usr/portage/net-wireless/blueman/blueman-9999.ebuild	2014-08-15 00:01:14.000000000 +0200
++++ blueman-9999.ebuild	2014-11-07 12:19:44.163842728 +0100
+@@ -32,6 +32,7 @@
+ 		dev-python/pygobject:3
+ 	)
+ 	>=net-wireless/bluez-4.61:=
++	dev-python/pycairo
+ 	${PYTHON_DEPS}"
+ DEPEND="${CDEPEND}
+ 	nls? ( dev-util/intltool sys-devel/gettext )
+@@ -57,8 +58,7 @@
+ 		data/blueman-manager.desktop.in || die "sed failed"
+ 
+ 	epatch \
+-		"${FILESDIR}/${PN}-9999-plugins-conf-file.patch" \
+-		"${FILESDIR}/${PN}-9999-set-codeset-for-gettext-to-UTF-8-always.patch"
++		"${FILESDIR}/${PN}-9999-plugins-conf-file.patch"
+ 	eautoreconf
+ }
+ 
