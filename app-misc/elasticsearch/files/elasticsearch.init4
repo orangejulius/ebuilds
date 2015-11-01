@@ -30,7 +30,7 @@ export ES_DIRECT_SIZE
 export ES_USE_IPV4
 
 server_command="/usr/share/elasticsearch/bin/elasticsearch"
-server_args=" -p ${PIDFILE} -Des.default.path.conf=\"${ES_CONF_PATH}\" -Des.default.path.data=\"${ES_DATA_PATH}\" -Des.default.path.work=\"${ES_WORK_PATH}\" -Des.default.path.logs=\"${ES_LOG_PATH}\""
+server_args=" -p ${PIDFILE} -Des.default.path.conf=${ES_CONF_PATH} -Des.default.path.data=${ES_DATA_PATH} -Des.default.path.work=${ES_WORK_PATH} -Des.default.path.logs=${ES_LOG_PATH}"
 
 depend() {
 	use net
