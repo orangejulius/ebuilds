@@ -9,14 +9,10 @@ inherit eutils systemd user
 MY_PN="${PN%-bin}"
 DESCRIPTION="Open Source, Distributed, RESTful, Search Engine"
 HOMEPAGE="https://www.elastic.co/products/elasticsearch"
-SRC_URI="https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/${PN}/${PV}/${PN}-${PV}.tar.gz"
-#SRC_URI="https://download.elastic.co/${MY_PN}/${MY_PN}/${MY_PN}-${PV}.tar.gz"
+SRC_URI="https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/${PN}/${PV}/${P}.tar.gz"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
-
-RESTRICT="strip"
-QA_PREBUILT="usr/share/elasticsearch/lib/sigar/libsigar-*.so"
 
 RDEPEND="|| ( virtual/jre:1.7 virtual/jre:1.8 )"
 
@@ -26,18 +22,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	rm -rf lib/sigar/*{solaris,winnt,freebsd,macosx}*
 	rm -rf bin/*.{bat,exe}
-	rm lib/sigar/libsigar-ia64-linux.so
 	rm LICENSE.txt
-
-	use amd64 && {
-		rm lib/sigar/libsigar-x86-linux.so
-	}
-
-	use x86 && {
-		rm lib/sigar/libsigar-amd64-linux.so
-	}
 }
 
 src_install() {
