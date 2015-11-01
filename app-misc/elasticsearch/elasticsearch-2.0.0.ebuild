@@ -39,9 +39,9 @@ src_install() {
 
 	keepdir /var/{lib,log}/${MY_PN}
 
-	newinitd "${FILESDIR}/elasticsearch.init4" "${MY_PN}"
+	newinitd "${FILESDIR}/elasticsearch.init5" "${MY_PN}"
 	newconfd "${FILESDIR}/${MY_PN}.conf" "${MY_PN}"
-	systemd_newunit "${FILESDIR}"/${PN}.service4 "${PN}.service"
+	systemd_newunit "${FILESDIR}"/${PN}.service5 "${PN}.service"
 }
 
 pkg_postinst() {
