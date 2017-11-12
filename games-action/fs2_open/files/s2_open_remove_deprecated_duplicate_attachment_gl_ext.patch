@@ -1,0 +1,15 @@
+diff -Nru fs2_open-3.6.9/code/graphics/gropengltexture.cpp fs2_open-3.6.9-patched/code/graphics/gropengltexture.cpp
+--- fs2_open-3.6.9/code/graphics/gropengltexture.cpp	2007-01-01 02:10:00.000000000 +0100
++++ fs2_open-3.6.9-patched/code/graphics/gropengltexture.cpp	2008-10-29 15:35:12.000000000 +0100
+@@ -1815,11 +1815,6 @@
+ 			case GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT:
+ 				strcpy(err_txt, "Missing one or more image attachments!\n");
+ 				break;
+-#ifndef __APPLE__ // for some reason, Apple doesn't include this define in their headers
+-			case GL_FRAMEBUFFER_INCOMPLETE_DUPLICATE_ATTACHMENT_EXT:
+-				strcpy(err_txt, "Image attached to more than one FBO!\n");
+-				break;
+-#endif
+ 			case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT:
+ 				strcpy(err_txt, "Attached images do not have the same width and height!\n");
+ 				break;
